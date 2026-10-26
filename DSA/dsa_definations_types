@@ -1,0 +1,147 @@
+What is DSA ..?
+
+DSA (Data Structures and Algorithms) 
+
+Step 1: What is DSA?
+DSA stands for Data Structures and Algorithms.
+
+It has two main parts:
+1. Data Structures
+A data structure is a way of organizing and storing data in a computer so that we can use it efficiently.
+
+Imagine a hotel. The hotel stores information about guests, rooms, food orders, and payments. How that information is organized affects how quickly staff can find or update it.
+
+Python examples:
+# List: Store multiple valuesnumbers = [10, 20, 30, 40]# Dictionary: Store data as key-value pairsguest = {    "name": "Subash",    "room": 101}# Set: Store unique valuesroom_numbers = {101, 102, 103}
+
+
+Each structure organizes data differently.
+2. Algorithms
+An algorithm is a step-by-step procedure for solving a problem.
+
+Imagine a hotel receptionist needs to find a guest named Subash among 100 guests.
+
+One approach is to check each guest, one by one, until Subash is found. This is an example of a linear search algorithm.
+guests = ["Ravi", "Kiran", "Subash", "Arun"]target = "Subash"for guest in guests:    if guest == target:        print("Guest found")        break
+
+
+Remember the difference:
+- Data structure: How data is organized.
+- Algorithm: How a problem is solved using steps.
+DSA combines both to help you write programs that are correct and efficient.
+Step 2: Types of Data Structures
+Data structures are commonly classified into two major categories:
+1. Linear data structures
+2. Non-linear data structures
+Other useful classifications include primitive and non-primitive structures, as well as static and dynamic structures.
+A. Linear Data Structures
+In a linear data structure, elements are arranged in a sequence.
+
+Think of guests standing in a line at a hotel reception.
+
+The main types are:
+1. Array
+An array stores elements in an indexed sequence. In a typical array, elements have the same data type and occupy contiguous memory.
+
+Python's built-in list is a dynamic array-like structure, although Python lists can hold different types of objects.
+numbers = [10, 20, 30, 40, 50]
+
+print(numbers[0])  # 10
+print(numbers[2])  # 30
+Hotel example: A numbered list of room rates.
+
+When to use it:
+- Storing collections of items.
+- Accessing elements by index.
+- Iterating through values.
+Important: Accessing an element by index in an array or Python list is typically O(1).
+
+2. Linked List
+A linked list consists of nodes. Each node stores data and a reference to another node.
+
+Unlike an array, its elements do not need to occupy adjacent memory locations.
+
+Hotel example: Each room's record points to the next room's record in a chain.
+
+Types of linked lists:
+- Singly linked list: Each node points to the next node.
+- Doubly linked list: Each node points to both the previous and next nodes.
+- Circular linked list: The last node links back to the first node.
+When to use it:
+- When you need frequent insertions or deletions at known node positions.
+- When implementing other data structures.
+Python doesn't have a built-in linked-list type, so you typically implement one using classes.
+
+3. Stack
+A stack follows LIFO: Last In, First Out.
+
+The last item added is the first item removed.
+
+Hotel example: A stack of room-service trays. The last tray placed on top is removed first.
+
+Main operations:
+- push: Add an item.
+- pop: Remove the top item.
+- peek: View the top item without removing it.
+Python example:
+stack = []stack.append("Order 1")stack.append("Order 2")stack.append("Order 3")print(stack.pop())  # Order 3print(stack.pop())  # Order 2
+
+
+When to use it:
+- Undo operations.
+- Browser history implementations.
+- Checking balanced parentheses.
+- Depth-first search.
+- Managing function calls conceptually.
+
+4. Queue
+A queue follows FIFO: First In, First Out.
+
+The first item added is the first item removed.
+
+Hotel example: Guests waiting at reception are served in arrival order.
+
+Main operations:
+- enqueue: Add an item.
+- dequeue: Remove the oldest item.
+- front: View the next item to be processed.
+Python example:
+from collections import dequequeue = deque()queue.append("Guest 1")queue.append("Guest 2")queue.append("Guest 3")print(queue.popleft())  # Guest 1print(queue.popleft())  # Guest 2
+
+
+When to use it:
+- Processing tasks in order.
+- Background job systems.
+- Breadth-first search.
+- Managing waiting requests.
+Use collections.deque for an efficient queue in Python rather than repeatedly removing elements from the beginning of a list.
+
+5. Hash Table
+A hash table stores data using keys and values. It uses a hash function to help locate values efficiently.
+
+In Python, a dict is a hash-table-based mapping.
+
+Hotel example: A receptionist looks up a guest using their booking ID instead of searching every guest record.
+guest_rooms = {    "G101": "Room 101",    "G102": "Room 205",    "G103": "Room 310"}print(guest_rooms["G102"])  # Room 205
+
+
+When to use it:
+- Fast lookups by key.
+- Counting repeated items.
+- Grouping related information.
+- Checking whether something has been seen before.
+Dictionary lookup is typically O(1) on average, though the worst case can be slower.
+6. Set
+A set stores unique elements, without maintaining a guaranteed positional order.
+
+Hotel example: A list of unique room IDs that have already been cleaned.
+cleaned_rooms = {101, 102, 103, 101}print(cleaned_rooms)  # {101, 102, 103}
+
+
+Room 101 appears only once because sets remove duplicates.
+
+When to use it:
+- Removing duplicates.
+- Checking membership.
+- Finding common or different elements between collections.
+morning_shift = {101, 102, 103}evening_shift = {102, 103, 104}print(morning_shift & evening_shift)  # {102, 103}print(morning_shift - evening_shift)  # {101}

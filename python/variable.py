@@ -28,10 +28,19 @@ class Student:
 st = Student("Subash" ,10)
 st1 = Student("Kittu" ,9)
 
-# st.fun1()
-# st1.fun1()
-
-
 st.func1()
 st1.func1()
+
+# Class variables
+# Class variables are defined directly inside a class, outside its methods.
+class Employee:
+    company = "LTM"
+
+    def __init__(self,name):
+        self.name = name
+
+    def func1(self,name):
+        self.name  = name
+
+
  
